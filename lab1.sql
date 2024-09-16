@@ -1,2 +1,5 @@
-ALTER TABLE users
-ALTER COLUMN isadmin SET DEFAULT FALSE;
+CREATE TABLE tasks (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50),
+	user_id INT
+);
