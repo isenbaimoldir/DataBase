@@ -16,3 +16,19 @@ alter column countryName set default 'Kazakhstan';
 
 insert into countries(regionid, population)
 values (23, 20000000);
+
+insert into countries default values;
+
+create table countriesnew like countries;
+
+insert into countriesnew select * from countries;
+
+update countries
+set regionid = 1
+where regionid is null;
+
+
+select countryName,
+	population * 1.1 as 'New population'
+from countries;
+
