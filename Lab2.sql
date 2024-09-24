@@ -1,13 +1,18 @@
-create database lab2;
+insert into countries(countryId,regionid, countryName)
+values (3, 33, 'Brazil');
 
-create table countries
-(
-	countryId serial primary key,
-	countryName varchar(50),
-	regionId int,
-	population int
-);
+insert into countries(countryId,regionid, countryName)
+values (4, 124, 'USA');
 
-insert into countries(countryName, regionId, population)
-values('France', 22, 68000000);
 
+insert into countries(countryName, regionid, population)
+values 
+('Egypt', 324, 111000000),
+('Russia', 12, 130000000),
+('Japan', 12, 140000000);
+
+alter table countries
+alter column countryName set default 'Kazakhstan';
+
+insert into countries(regionid, population)
+values (23, 20000000);
