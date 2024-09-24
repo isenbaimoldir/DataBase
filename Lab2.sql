@@ -32,3 +32,12 @@ select countryName,
 	population * 1.1 as 'New population'
 from countries;
 
+delete from countries
+where population < 100000;
+
+delete from countriesnew 
+where countryId in (select countryId from countries)
+returning *;
+
+delete from countries
+returning *;
