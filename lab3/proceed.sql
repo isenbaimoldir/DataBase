@@ -1,4 +1,3 @@
-CREATE DATABASE lab3;
 
 SELECT lastname FROM employees;
 
