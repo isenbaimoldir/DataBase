@@ -1,35 +1,34 @@
-insert into countries(countryId,regionid, countryName)
-values (3, 33, 'Brazil');
+create table countries
+(
+    countryId serial primary key,
+    countryName varchar(50) default 'Kazakhstan', 
+    regionId int,
+    population int
+);
 
-insert into countries(countryId,regionid, countryName)
-values (4, 124, 'USA');
+insert into countries(countryName, regionId, population)
+values('France', 22, 68000000);
 
-
-insert into countries(countryName, regionid, population)
+insert into countries(countryName, regionId, population)
 values 
 ('Egypt', 324, 111000000),
 ('Russia', 12, 130000000),
 ('Japan', 12, 140000000);
 
-alter table countries
-alter column countryName set default 'Kazakhstan';
-
-insert into countries(regionid, population)
+insert into countries(regionId, population)
 values (23, 20000000);
 
 insert into countries default values;
 
-create table countriesnew like countries;
-
-insert into countriesnew select * from countries;
+create table countriesnew as
+select * from countries;
 
 update countries
-set regionid = 1
-where regionid is null;
-
+set regionId = 1
+where regionId is null;
 
 select countryName,
-	population * 1.1 as 'New population'
+    population * 1.1 as "New population"
 from countries;
 
 delete from countries
