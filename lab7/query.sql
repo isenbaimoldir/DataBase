@@ -24,29 +24,18 @@ CREATE TABLE employees(
 
 --1
 CREATE INDEX name_index ON countries(name);
-SELECT * FROM countries WHERE name = 'string';
 
 --2
 CREATE INDEX employee_name_index ON employees(first_name, last_name);
 
-    SELECT * FROM employees WHERE first_name = 'string'
-    AND last_name = 'string';
 
 --3
-   CREATE UNIQUE INDEX employee_id_index ON employees(employee_id);
-
-    SELECT * FROM employees WHERE salary < 10000000
-    AND salary > 5000000;
+CREATE UNIQUE INDEX employee_id_index ON employees(employee_id);
 
 --4
 CREATE INDEX sub_name_index ON employees(substring(first_name FROM 1 FOR 4));
 
-SELECT * FROM employees WHERE substring(first_name
-                                        from 1 for 4) = 'abcd';
+SELECT * FROM employees WHERE substring(first_name from 1 for 4) = 'abcd';
 --5
 CREATE INDEX budget_index ON departments(budget);
 CREATE INDEX salary_index ON employees(salary);
-
-SELECT * FROM employees e JOIN departments d
-ON d.department_id = e.department_id
-WHERE d.budget > 5000000 AND e.salary < 45060000;
